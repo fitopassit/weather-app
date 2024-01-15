@@ -10,8 +10,8 @@ function App() {
       <Routes>
         {/*<Route element={<header />} path={'/*'}/>*/}
           <Route path={'/'} element={<WelcomePage />} />
-        <Route path={'/tyumen'} element={<CitiPage/>}></Route>
-        <Route path={'/fewday'} element={<NextFewDaysForecast/>}/>
+        <Route path={'/samara'} element={<CitiPage/>}></Route>
+        {/*<Route path={'/fewday'} element={<NextFewDaysForecast/>}/>*/}
         {/*</Route>*/}
       </Routes>
     </BrowserRouter>
