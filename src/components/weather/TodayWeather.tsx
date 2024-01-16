@@ -5,9 +5,9 @@ import { ru } from 'date-fns/locale';
 
 const TodayWeather: React.FC<WeatherForecast> = ({...forecast}) => {
   const forecastDay = forecast.dt_txt;
-  let date = parse(forecastDay, 'yyyy-MM-dd', new Date());
-  let dayOfWeek = format(date, 'EEEE', { locale: ru });
-  let currentDate = format(new Date(), 'yyyy-MM-dd');
+  const date = parse(forecastDay, 'yyyy-MM-dd', new Date());
+  const dayOfWeek = format(date, 'EEEE', { locale: ru });
+  const currentDate = format(new Date(), 'yyyy-MM-dd');
 
   return (
     <div style={{margin: '0 26px', textAlign: 'center'}}>
