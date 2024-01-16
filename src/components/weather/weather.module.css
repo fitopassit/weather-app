@@ -1,0 +1,38 @@
+.card {
+    margin: 0 26px;
+    text-align: center;
+}
+
+.card_weakDay {
+    color: var(--gray-200);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.card_img {
+    height: 67px;
+    width: 67px;
+}
+
+.card_description {
+    color: var(--gray-200);
+    font-weight: normal;
+    font-size: 14px;
+}
+
+.card_temperature {
+    color: var(--gray-100);
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.card_feelsTemperature {
+    color: var(--gray-400);
+    font-size: 14px;
+}
+
+.detailed_image {
+    margin-right: 13px;
+    width: 16px;
+    height: 30px;
+}
