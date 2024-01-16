@@ -13,7 +13,7 @@ const WelcomePage = () => {
       <Header/>
       <Box
         sx={{
-          backgroundImage: `url("../../public/Background.png")`,
+          backgroundImage: `url("src/assets/Background.png")`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           position: 'fixed',
