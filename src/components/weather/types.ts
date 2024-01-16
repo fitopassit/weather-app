@@ -31,12 +31,6 @@ export interface WeatherForecast {
   clouds: {
     all: number,
   },
-  snow?: {
-    '3h': number
-  },
-  rain?:{
-    '3h': number
-  }
   wind: {
     speed: number,
     deg: number,
@@ -61,5 +55,15 @@ export interface City {
   timezone: number,
   sunrise: number,
   sunset: number
+}
+
+export interface Time {
+  datetime: string,
+  day_of_weak: number,
+  day_of_year: number,
+  unixtime: number,
+  utc_datetime: string,
+  utc_offset: string,
+  week_number: number
 }
 
