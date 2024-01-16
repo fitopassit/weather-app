@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Nunito, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -11,6 +11,31 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+  --text-font: 'Nunito', sans-serif;
+  --blue-light: #8FB2F5;
+  --gray-900: #13131A;
+  --gray-800: #16161F;
+  --gray-700: #1C1C27;
+  --gray-600: #1E1E29;
+  --gray-500: #3B3B54;
+  --gray-400: #7F7F98;
+  --gray-300: #ABABC4;
+  --gray-200: #BFBFD4;
+  --gray-100: #FAFAFA;
+  --white: #FFFFFF;
+
+  --heading-hg: normal 800  96px/100% var(--text-font);
+  --heading-xl: normal 700  48px/120% var(--text-font);
+  --heading-lg: normal 700  32px/140% var(--text-font);
+  --heading-md: normal 700  20px/140% var(--text-font);
+  --heading-sm: normal 700  16px/140% var(--text-font);
+  --heading-xs: normal 700  14px/140% var(--text-font);
+  --text-lg: normal 400  20px/140% var(--text-font);
+  --text-md: normal 400  16px/140% var(--text-font);
+  --text-sm: normal 400  14px/140% var(--text-font);
+  --text-xs: normal 400  12px/140% var(--text-font);
 }
 
 a {
