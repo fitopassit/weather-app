@@ -3,8 +3,6 @@ import Header from '../../components/header/Header.tsx';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-
-
 const WelcomePage = () => {
   const [cities, setCities] = useState<string>('');
   const navigate = useNavigate();
@@ -13,7 +11,7 @@ const WelcomePage = () => {
       <Header/>
       <Box
         sx={{
-          backgroundImage: `url("src/assets/Background.png")`,
+          backgroundImage: `url("/src/assets/Background.png")`,
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover',
           position: 'fixed',

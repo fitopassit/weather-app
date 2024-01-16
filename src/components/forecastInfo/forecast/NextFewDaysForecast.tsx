@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material';
-import TodayWeather from './TodayWeather.tsx';
-import { ForecastDictionary, WeatherForecast } from './types.ts';
+import DayWeather from './DayWeather.tsx';
+import { ForecastDictionary, WeatherForecast } from '../types.ts';
 import * as _ from 'lodash';
 import React from 'react';
 //https://api.openweathermap.org/data/2.5/forecast?q=Samara&units=metric&appid=644ada49c4ba82c5ab4a6ab922c7104b
@@ -23,7 +23,7 @@ const NextFewDaysForecast: React.FC<{arrayWithForecast: WeatherForecast[]}> = ({
           погоды на ближайшие 6 дней</Typography>
         <Box sx={{ display: 'flex' }}>
           {firstElementsGroupForecast.map(weather => {
-            return <TodayWeather key={weather.dt} {...weather} />;
+            return <DayWeather key={weather.dt} {...weather} />;
           })}
         </Box>
       </Box>

@@ -1,10 +1,10 @@
 import React from 'react';
-import { WeatherForecast } from './types.ts';
+import { WeatherForecast } from '../types.ts';
 import {format, parse, isEqual } from 'date-fns';
 import { ru } from 'date-fns/locale';
-import styled from '/src/components/weather/weather.module.css'
+import styled from '/src/components/forecastInfo/weather.module.css'
 
-const TodayWeather: React.FC<WeatherForecast> = ({...forecast}) => {
+const DayWeather: React.FC<WeatherForecast> = ({...forecast}) => {
   const forecastDay = forecast.dt_txt;
   const date = parse(forecastDay, 'yyyy-MM-dd', new Date());
   const dayOfWeek = format(date, 'EEEE', { locale: ru });
@@ -13,7 +13,7 @@ const TodayWeather: React.FC<WeatherForecast> = ({...forecast}) => {
   return (
     <div className={styled.card}>
       <h3 className={styled.card_weakDay}>{isEqual(forecastDay, currentDate) ? 'Сегодня': `${dayOfWeek.charAt(0).toUpperCase()}${dayOfWeek.slice(1)}`}</h3>
-      <img className={styled.card_img} src="public/weather/today-weather/cloudy.svg" alt="облачно" />
+      <img className={styled.card_img} src="/weather/today-weather/cloudy.svg" alt="облачно" />
       <h3 className={styled.card_description}>{forecast.weather[0].description}</h3>
       <div style={{display: 'flex'}}>
         <h4 className={styled.card_temperature}>{forecast?.main.temp}</h4>
@@ -23,4 +23,4 @@ const TodayWeather: React.FC<WeatherForecast> = ({...forecast}) => {
   );
 };
 
-export default TodayWeather;
+export default DayWeather;

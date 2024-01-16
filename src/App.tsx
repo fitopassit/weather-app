@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header.tsx';
 import WelcomePage from './pages/welcome/WelcomePage.tsx';
-import CitiPage from './pages/CitiPage.tsx';
+import CityPage from './pages/city/CityPage.tsx';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Routes>
         {/*<Route element={<header />} path={'/*'}/>*/}
         <Route path={'/'} element={<WelcomePage />} />
-        <Route path={'/:cities'} element={<CitiPage />}/>
+        <Route path={'/:cities'} element={<CityPage />}/>
       </Routes>
     </BrowserRouter>
   );

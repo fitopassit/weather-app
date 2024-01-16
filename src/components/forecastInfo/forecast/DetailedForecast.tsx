@@ -1,8 +1,7 @@
-import { Box, Divider, List, ListItem, ListItemText, SvgIcon, Typography } from '@mui/material';
+import { Box, Divider, List, ListItem, ListItemText, Typography } from '@mui/material';
 import React from 'react';
-import { WeatherForecast } from './types.ts';
-import * as _ from 'lodash';
-import styled from '/src/components/weather/weather.module.css'
+import { WeatherForecast } from '../types.ts';
+import styled from '/src/components/forecastInfo/weather.module.css'
 
 const DetailedForecast: React.FC<{arrayWithForecast: WeatherForecast[]}> = ({ arrayWithForecast }) => {
   const detailedForecast: WeatherForecast = arrayWithForecast[0];
