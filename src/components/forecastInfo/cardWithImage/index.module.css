@@ -1,0 +1,123 @@
+.image__info {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.image__title {
+    display: flex;
+    margin: 32px 32px 0;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bold;
+    color: var(--white);
+    justify-content: space-between;
+}
+
+.image__title_uppercase {
+    text-transform: CAPITALIZE;
+}
+
+.image__description {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    margin: 0 32px;
+}
+
+.card__forecastBox {
+    display: flex;
+    justify-content: space-around;
+}
+.card__textblock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media screen and (max-width: 810px) {
+        align-items: flex-end
+    }
+
+}
+.btn {
+    background-color: var(--gray-600);
+    border-radius: 8px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.btn_svg {
+    width: 40px;
+    height: 40px;
+}
+
+.search {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 56px;
+    background-color: var(--gray-600);
+    width: 568px;
+    height: 56px;
+    border-radius: 8px;
+    @media screen and (max-width: 810px) {
+        width: 200px;
+    }
+}
+.card__forecastBox_title {
+
+    color: var(--white);
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 100%;
+    margin-right: 10px;
+    @media screen and (max-width: 810px) {
+        font-size: 24px;
+    }
+}
+
+.card__forecastBox_text {
+    color: var(--white);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    @media screen and (max-width: 810px) {
+        font-size: 18px;
+        text-align: center;
+    }
+}
+
+.detailed_image {
+    width: 248px;
+    height: 248px;
+    right: 0;
+    bottom: 0;
+}
+
+
+.card {
+    margin: 0 26px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.containerForecast {
+    background-color: var(--gray-800);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.searchBar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}

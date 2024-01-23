@@ -1,0 +1,27 @@
+.container {
+    display: flex;
+    align-items: baseline;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--gray-900);
+    justify-content: center;
+
+    @media screen and (max-width: 1580px) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: auto;
+    }
+    @media screen and (max-width: 810px) {
+    }
+}
+
+.forecast {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    @media screen and (max-width: 810px) {
+        width: 80%;
+}
+
+}

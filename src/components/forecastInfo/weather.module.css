@@ -1,38 +1,100 @@
 .card {
     margin: 0 26px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.card_weakDay {
+.containerForecast {
+    background-color: var(--gray-800);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*@media screen and (max-width: 1580px) {*/
+    /*    flex-direction: column;*/
+    /*    justify-content: flex-start;*/
+    /*    align-items: center;*/
+    /*    height: auto;*/
+    /*}*/
+}
+
+.today__temperature {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.card__weakDay {
     color: var(--gray-200);
     font-weight: bold;
     font-size: 14px;
+    text-transform: CAPITALIZE;
 }
 
-.card_img {
+.card__img {
     height: 67px;
     width: 67px;
 }
 
-.card_description {
+.card__description {
     color: var(--gray-200);
     font-weight: normal;
     font-size: 14px;
 }
 
-.card_temperature {
-    color: var(--gray-100);
+.card__temperature {
+    color: var(--white-100);
     font-size: 14px;
     margin-right: 8px;
+    font-weight: 700;
 }
 
-.card_feelsTemperature {
+.card__feelsTemperature {
     color: var(--gray-400);
     font-size: 14px;
+    font-weight: 700;
 }
 
-.detailed_image {
+.detailed__image {
     margin-right: 13px;
     width: 16px;
     height: 30px;
+}
+
+.btn {
+    background-color: var(--gray-600);
+    border-radius: 8px;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.btn_svg {
+    width: 40px;
+    height: 40px;
+}
+
+.search {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 56px;
+    background-color: var(--gray-600);
+    width: 568px;
+    height: 56px;
+    border-radius: 8px;
+    @media screen and (max-width: 530px) {
+        width: 200px;
+    }
+}
+
+.searchBar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-end;
 }

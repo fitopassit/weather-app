@@ -4,21 +4,26 @@ import NextFewDaysForecast from '../../components/forecastInfo/forecast/NextFewD
 import { Forecast } from '../../components/forecastInfo/types.ts';
 import { CircularProgress } from '@mui/material';
 import CardWithImage from '../../components/forecastInfo/cardWithImage/CardWithImage.tsx';
-import { useParams } from 'react-router-dom';
-
+import { useNavigate, useParams } from 'react-router-dom';
+import styles from '/src/pages/city/index.module.css';
+import apiKey from '../../apiKey.tsx';
 const CityPage = () => {
   const [forecast, setForecast] = useState<Forecast['list']>([]);
-  const [city, setCity] = useState<Forecast['city']>()
+  const [city, setCity] = useState<Forecast['city']>();
   const [loading, setLoading] = useState(true);
   const { cities } = useParams();
-  // console.log(`прогноз погоды для города ${cities}`)
+
+  const navigate = useNavigate();
+
   useEffect(() => {
-    //https://api.openweathermap.org/data/2.5/forecast?q=Samara&units=metric&appid=644ada49c4ba82c5ab4a6ab922c7104b
     const fetchForecast = async () => {
-      const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cities}&units=metric&appid=644ada49c4ba82c5ab4a6ab922c7104b`;
+      const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cities}&units=metric&appid=${apiKey}`;
       setLoading(true);
       try {
         const response: Response = await fetch(url);
+        if (response.status === 404) {
+          navigate('/error/404');
+        }
         const forecastList: Forecast = await response.json();
         setForecast(forecastList.list);
         setCity(forecastList.city);
@@ -30,18 +35,20 @@ const CityPage = () => {
     };
 
     void fetchForecast();
-  }, []);
-  console.log('data', loading)
+  }, [cities]);
   return (
     <>
       {loading ? <CircularProgress size={20} /> :
-       (
-        <div style={{ backgroundColor: '$13131A' }}>
-          <CardWithImage arrayWithForecast={forecast} city={city} />
-          <DetailedForecast arrayWithForecast={forecast} />
-          <NextFewDaysForecast arrayWithForecast={forecast} />
-        </div>
-      )}
+        (
+          <div className={styles.container}>
+            <CardWithImage arrayWithForecast={forecast} city={city} />
+            <div className={styles.forecast}>
+              <DetailedForecast arrayWithForecast={forecast} />
+              <NextFewDaysForecast arrayWithForecast={forecast} />
+            </div>
+
+          </div>
+        )}
     </>
   );
 };

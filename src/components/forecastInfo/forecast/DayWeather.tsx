@@ -1,23 +1,23 @@
 import React from 'react';
 import { WeatherForecast } from '../types.ts';
-import {format, parse, isEqual } from 'date-fns';
+import { format, parse, isEqual } from 'date-fns';
 import { ru } from 'date-fns/locale';
-import styled from '/src/components/forecastInfo/weather.module.css'
+import styles from '/src/components/forecastInfo/weather.module.css';
 
-const DayWeather: React.FC<WeatherForecast> = ({...forecast}) => {
+const DayWeather: React.FC<WeatherForecast> = ({ ...forecast }) => {
   const forecastDay = forecast.dt_txt;
   const date = parse(forecastDay, 'yyyy-MM-dd', new Date());
   const dayOfWeek = format(date, 'EEEE', { locale: ru });
   const currentDate = format(new Date(), 'yyyy-MM-dd');
-
+  const iconName = forecast.weather[0].icon.match(/\d+/)[0];
   return (
-    <div className={styled.card}>
-      <h3 className={styled.card_weakDay}>{isEqual(forecastDay, currentDate) ? 'Сегодня': `${dayOfWeek.charAt(0).toUpperCase()}${dayOfWeek.slice(1)}`}</h3>
-      <img className={styled.card_img} src="/weather/today-weather/cloudy.svg" alt="облачно" />
-      <h3 className={styled.card_description}>{forecast.weather[0].description}</h3>
-      <div style={{display: 'flex'}}>
-        <h4 className={styled.card_temperature}>{forecast?.main.temp}</h4>
-        <h4 className={styled.card_feelsTemperature}>{forecast?.main.feels_like}</h4>
+    <div className={styles.card}>
+      <h3 className={styles.card__weakDay}>{isEqual(forecastDay, currentDate) ? 'Сегодня' : `${dayOfWeek}`}</h3>
+      <img className={styles.card__img} src={`/src/assets/weather/today-weather/${iconName}.svg`} alt="Иконка погоды" />
+      <h3 className={styles.card__description}>{forecast.weather[0].description}</h3>
+      <div className={styles.today__temperature}>
+        <span className={styles.card__temperature}>{Math.floor(forecast?.main.temp)}</span>
+        <span className={styles.card__feelsTemperature}>{Math.floor(forecast?.main.feels_like)}</span>
       </div>
     </div>
   );

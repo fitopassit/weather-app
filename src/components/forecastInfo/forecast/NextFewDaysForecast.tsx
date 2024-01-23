@@ -18,10 +18,10 @@ const NextFewDaysForecast: React.FC<{arrayWithForecast: WeatherForecast[]}> = ({
 
   return (
     <>
-      <Box sx={{ backgroundColor: '#16161F', borderRadius: '12px' }}>
-        <Typography sx={{ color: '#7F7F98', textSize: '20px', textAlign: 'left', pt: '28px', pl: '24px', pr: '24px' }}>Прогноз
+      <Box sx={{ backgroundColor: '#16161F', borderRadius: '12px', mt: '16px' }}>
+        <Typography sx={{ color: '#7F7F98', textSize: '20px', textAlign: 'left', pt: '28px', pl: '24px', pr: '24px'}}>Прогноз
           погоды на ближайшие 6 дней</Typography>
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', ["@media screen and (max-width: 810px)"]: { overflowX: 'scroll'} }}>
           {firstElementsGroupForecast.map(weather => {
             return <DayWeather key={weather.dt} {...weather} />;
           })}

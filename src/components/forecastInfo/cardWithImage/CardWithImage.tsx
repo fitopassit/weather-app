@@ -3,7 +3,6 @@ import { City, Time, WeatherForecast } from '../types.ts';
 import { useParams } from 'react-router-dom';
 import { fromUnixTime } from 'date-fns';
 import { Box, CircularProgress } from '@mui/material';
-import LogoButton from './LogoButton.tsx';
 import InputCity from './InputCity.tsx';
 import WeatherImage from './WeatherImage.tsx';
 
@@ -32,15 +31,10 @@ const CardWithImage: React.FC<{ arrayWithForecast: WeatherForecast[], city: City
 
   return (
     loading ? <CircularProgress size={20} /> :
-      <>
         <Box>
-          <div>
-            <LogoButton />
             <InputCity />
-            <WeatherImage dateCities={dateCities} cities={cities} />
-          </div>
+            <WeatherImage arrayWithForecast={arrayWithForecast} dateCities={dateCities} cities={cities} />
         </Box>
-      </>
   );
 };
 

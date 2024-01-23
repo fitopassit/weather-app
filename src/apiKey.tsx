@@ -1,0 +1,1 @@
+export default Apikey = 'Your Weather Api key';
