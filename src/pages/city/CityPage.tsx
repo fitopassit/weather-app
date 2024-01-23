@@ -17,6 +17,7 @@ const CityPage = () => {
 
   useEffect(() => {
     const fetchForecast = async () => {
+      console.log('apiKey', apiKey)
       const url = `https://api.openweathermap.org/data/2.5/forecast?q=${cities}&units=metric&appid=${apiKey}`;
       setLoading(true);
       try {

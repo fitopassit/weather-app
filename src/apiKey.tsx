@@ -1,1 +1,2 @@
-export default Apikey = 'Your Weather Api key';
+const Apikey = 'YourApiKey';
+export default Apikey;
